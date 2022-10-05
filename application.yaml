@@ -11,7 +11,7 @@ spec:
     targetRevision: HEAD
     path: dev
   destination:
-    server: https://kubernetes.default.svc
+    server: https://kubernetes.default.svc # internal svc name for k8s API server
     namespace: myapp
 
   syncPolicy:
@@ -19,5 +19,5 @@ spec:
       - CreateNamespace=true
 
     automated:
-      selfHeal: true
-      prune: true
+      selfHeal: true  # by default, live changes in cluster will not trigger automated sync
+      prune: true     # by default, automatic sync will not delete resources
