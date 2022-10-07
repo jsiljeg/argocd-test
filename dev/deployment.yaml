@@ -15,5 +15,6 @@ spec:
       containers:
         - name: myapp
           image: busybox:1.34
-          ports:
-            - containerPort: 8080
+          command:
+            - sleep
+            - "10800"
